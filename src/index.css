@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 25% 98%;
+    --foreground: 240 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 220 100% 65%; /* Baby Blue Hue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5% 30%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 60%;
+
+    --accent: 264 76% 94%;
+    --accent-foreground: 240 10% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 220 100% 65%; /* Baby Blue Hue */
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5% 26%; /* Adjusted to be more distinct */
+    --sidebar-primary: 220 100% 65%; /* Baby Blue Hue */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 44% 18%;
+    --sidebar-accent-foreground: 240 6% 90%;
+    --sidebar-border: 240 4% 18%;
+    --sidebar-ring: 220 100% 65%; /* Baby Blue Hue */
+  }
+
+  .dark {
+    --background: 240 10% 9%;
+    --foreground: 240 6% 90%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 240 6% 90%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 240 6% 90%;
+
+    --primary: 220 100% 65%; /* Baby Blue Hue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 18%;
+    --secondary-foreground: 240 6% 90%;
+
+    --muted: 240 4% 18%;
+    --muted-foreground: 240 6% 64%;
+
+    --accent: 270 44% 18%;
+    --accent-foreground: 240 6% 90%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 220 100% 65%; /* Baby Blue Hue */
+
+    --sidebar-background: 240 10% 12%;
+    --sidebar-foreground: 240 6% 90%; /* Adjusted to be more distinct */
+    --sidebar-primary: 220 100% 65%; /* Baby Blue Hue */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 44% 18%;
+    --sidebar-accent-foreground: 240 6% 90%;
+    --sidebar-border: 240 4% 18%;
+    --sidebar-ring: 220 100% 65%; /* Baby Blue Hue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .stat-card-sales {
+    @apply bg-gradient-to-br from-sales-gradient-from to-sales-gradient-to;
+  }
+
+  .stat-card-orders {
+    @apply bg-gradient-to-br from-orders-gradient-from to-orders-gradient-to;
+  }
+
+  .stat-card-visitors {
+    @apply bg-gradient-to-br from-visitors-gradient-from to-visitors-gradient-to;
+  }
+
+  .dashboard-card {
+    @apply bg-white rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 text-sidebar-foreground hover:text-baby-blue-primary transition-colors duration-200 py-2.5 px-4 rounded-lg hover:bg-baby-blue-light;
+  }
+
+  .sidebar-item.active {
+    @apply bg-baby-blue-light text-baby-blue-primary font-medium;
+  }
+
+  .baby-blue-icon-bg {
+    @apply bg-baby-blue-primary bg-opacity-10;
+  }
+
+  /* Force baby blue color for PageHeader icons */
+  .baby-blue-icon-bg > svg {
+    color: hsl(220, 100%, 65%) !important;
+  }
+}
